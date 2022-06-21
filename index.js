@@ -1,6 +1,6 @@
 import fs from "fs";
 
-class Contenedor {
+export default class Contenedor {
   constructor(filename) {
     this.filename = filename;
   }
@@ -46,7 +46,7 @@ class Contenedor {
       while (i < allProducts.length && number != allProducts[i].id ) {
           i++;
         } 
-      return console.log(allProducts[i]);
+      return allProducts[i];
       }
     }catch (error) {
       throw new Error(error);
@@ -56,8 +56,7 @@ class Contenedor {
   getAll = async () =>{
     try {
       const allProducts = await this.read();
-
-      return console.log(allProducts);
+      return allProducts;
     } catch (error){
       throw new Error(error);
     }
@@ -115,8 +114,9 @@ class Contenedor {
 
 }
 
-export default Contenedor;
-//const productos = new Contenedor("./products.json");
+
+// const productos = new Contenedor("./products.json");
+
 
 
 
